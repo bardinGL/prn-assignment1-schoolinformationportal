@@ -28,12 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            pbBackground = new PictureBox();
+            lbHeader = new Label();
+            ((System.ComponentModel.ISupportInitialize)pbBackground).BeginInit();
+            SuspendLayout();
+            // 
+            // pbBackground
+            // 
+            pbBackground.BackgroundImage = (Image)resources.GetObject("pbBackground.BackgroundImage");
+            pbBackground.Location = new Point(-2, 0);
+            pbBackground.Name = "pbBackground";
+            pbBackground.Size = new Size(1188, 632);
+            pbBackground.TabIndex = 1;
+            pbBackground.TabStop = false;
+            pbBackground.Click += pictureBox1_Click;
+            // 
+            // lbHeader
+            // 
+            lbHeader.AutoSize = true;
+            lbHeader.BackColor = Color.Transparent;
+            lbHeader.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            lbHeader.ForeColor = Color.FromArgb(104, 0, 0);
+            lbHeader.Location = new Point(36, 35);
+            lbHeader.Name = "lbHeader";
+            lbHeader.Size = new Size(783, 54);
+            lbHeader.TabIndex = 2;
+            lbHeader.Text = "Welcome to the student information portal";
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1184, 600);
+            Controls.Add(lbHeader);
+            Controls.Add(pbBackground);
+            Name = "Form1";
+            Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)pbBackground).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private PictureBox pbBackground;
+        private Label lbHeader;
     }
 }
