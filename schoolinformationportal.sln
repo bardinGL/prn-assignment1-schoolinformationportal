@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "schoolinformationportal", "schoolinformationportal\schoolinformationportal.csproj", "{18606BC3-6011-4D19-B66B-FDE9F80C5B75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "schoolinformationportal", "schoolinformationportal\schoolinformationportal.csproj", "{18606BC3-6011-4D19-B66B-FDE9F80C5B75}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "..\..\prn-assignment1-schoolinformationportal-master\prn-assignment1-schoolinformationportal-master\Service\Service.csproj", "{4038522D-F01E-4C53-826D-596134D567E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{18606BC3-6011-4D19-B66B-FDE9F80C5B75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18606BC3-6011-4D19-B66B-FDE9F80C5B75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18606BC3-6011-4D19-B66B-FDE9F80C5B75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4038522D-F01E-4C53-826D-596134D567E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4038522D-F01E-4C53-826D-596134D567E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4038522D-F01E-4C53-826D-596134D567E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4038522D-F01E-4C53-826D-596134D567E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

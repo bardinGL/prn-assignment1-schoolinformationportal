@@ -8,4 +8,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\prn-assignment1-schoolinformationportal-master\prn-assignment1-schoolinformationportal-master\Service\Service.csproj" />
+  </ItemGroup>
+
 </Project>
