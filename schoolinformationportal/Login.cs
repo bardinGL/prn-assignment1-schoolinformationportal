@@ -23,36 +23,81 @@ namespace PE_PRN
         {
             InitializeComponent();
             var userList = repositoryBase.GetAll();
-//            var userList = userService.GetAll();
+            //            var userList = userService.GetAll();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
-        {
-            btnLogin.Enabled = false;
-            String username = txtUsername.Text;
-            String password = txtPassword.Text;
+        {   if (radioButton1.Checked)
+            {
 
-            var check = repositoryBase.GetAll().Where(p =>
-            p.Password.Equals(username) &&
-            p.Email.Equals(password));
-            //p.UserRole == 1)
+
+
+
+
+
+
+            }
+            else {
+
+                btnLogin.Enabled = false;
+                String username = txtUsername.Text;
+                String password = txtPassword.Text;
+
+                var check = repositoryBase.GetAll().Where(p =>
+                p.Password.Equals(username) &&
+                p.Email.Equals(password));
+                //p.UserRole == 1)
                 //.FirstOrDefault();
 
-            if (check != null)
-            {
-                this.Hide();
-                //Management management = new Management();
-                //management.Show();
+                if (check != null)
+                {
+                    StudentInfoContext _studentInfoContext = new StudentInfoContext();
+                    var StudentName = (from a in _studentInfoContext.Accounts
+                                       join
+                                   c in _studentInfoContext.Students on a.Email equals c.StudentEmail
+                                       where c.StudentEmail == username
+                                       select c.StudentName).SingleOrDefault();
+                    var roleID = (from a in _studentInfoContext.Accounts
+                                  join
+                                   c in _studentInfoContext.Students on a.Email equals c.StudentEmail
+                                  where c.StudentEmail == username
+                                  select c.StudentId).SingleOrDefault();
+
+                    var fullname = (from a in _studentInfoContext.Accounts
+                                    join
+                                c in _studentInfoContext.Students on a.Email equals c.StudentEmail
+                                    where c.StudentEmail == username
+                                    select c.StudentName).SingleOrDefault();
+
+                    var ClassID = (from a in _studentInfoContext.Accounts
+                                   join
+                               c in _studentInfoContext.Students on a.Email equals c.StudentEmail
+                                   where c.StudentEmail == username
+                                   select c.ClassId).SingleOrDefault();
+                    this.Hide();
+                    Form1 form1 = new Form1(roleID, fullname, ClassID);
+                    form1.Show();
+                    //Management management = new Management();
+                    //management.Show();
+
+                }
+                else
+                {
+                    MessageBox.Show("You are not allowed to access this function!",
+                        "Notification",
+                        MessageBoxButtons.OK);
+                }
+                btnLogin.Enabled = true;
+
+
 
             }
-            else
-            {
-                MessageBox.Show("You are not allowed to access this function!",
-                    "Notification",
-                    MessageBoxButtons.OK);
-            }
-            btnLogin.Enabled = true;
+          
 
+        
         }
+
+
+
     }
 }

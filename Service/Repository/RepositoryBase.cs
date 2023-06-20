@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Service.Models;
 
 namespace Service.Repository
@@ -15,7 +9,7 @@ namespace Service.Repository
         DbSet<T> _DbSet;
         public RepositoryBase()
         {
-           studentInfoContext = new StudentInfoContext();
+            studentInfoContext = new StudentInfoContext();
             _DbSet = studentInfoContext.Set<T>();
         }
         public List<T> GetAll()
@@ -29,7 +23,7 @@ namespace Service.Repository
         }
         public void Update(T entity)
         {
-           var tracker = studentInfoContext.Attach(entity);
+            var tracker = studentInfoContext.Attach(entity);
             tracker.State = EntityState.Modified;
             studentInfoContext.SaveChanges();
         }
@@ -40,7 +34,8 @@ namespace Service.Repository
                 _DbSet.Remove(entity);
                 studentInfoContext.SaveChanges();
                 return true;
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 return false;
 

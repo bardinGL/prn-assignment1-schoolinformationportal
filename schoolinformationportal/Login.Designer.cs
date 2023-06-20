@@ -33,6 +33,7 @@
             lbUsername = new Label();
             txtUsername = new TextBox();
             btnLogin = new Button();
+            radioButton1 = new RadioButton();
             SuspendLayout();
             // 
             // txtPassword
@@ -78,11 +79,23 @@
             btnLogin.UseVisualStyleBackColor = true;
             btnLogin.Click += btnLogin_Click;
             // 
+            // radioButton1
+            // 
+            radioButton1.AutoSize = true;
+            radioButton1.Location = new Point(281, 226);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new Size(149, 24);
+            radioButton1.TabIndex = 9;
+            radioButton1.TabStop = true;
+            radioButton1.Text = "Are you an Admin";
+            radioButton1.UseVisualStyleBackColor = true;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1182, 453);
+            Controls.Add(radioButton1);
             Controls.Add(btnLogin);
             Controls.Add(txtPassword);
             Controls.Add(lbPassword);
@@ -101,5 +114,6 @@
         private Label lbUsername;
         private TextBox txtUsername;
         private Button btnLogin;
+        private RadioButton radioButton1;
     }
 }

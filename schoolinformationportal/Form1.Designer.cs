@@ -50,56 +50,78 @@
             // 
             // lbHeader
             // 
-            lbHeader.AutoSize = true;
             lbHeader.BackColor = Color.Transparent;
-            lbHeader.Font = new Font("Segoe UI", 32F, FontStyle.Regular, GraphicsUnit.Point);
-            lbHeader.ForeColor = Color.FromArgb(104, 0, 0);
-            lbHeader.Location = new Point(68, 183);
+            lbHeader.Dock = DockStyle.Fill;
+            lbHeader.Font = new Font("Segoe UI Black", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            lbHeader.ForeColor = Color.SkyBlue;
+            lbHeader.Location = new Point(0, 0);
             lbHeader.Name = "lbHeader";
-            lbHeader.Size = new Size(138, 72);
+            lbHeader.Size = new Size(1184, 455);
             lbHeader.TabIndex = 2;
-            lbHeader.Text = "aaaa";
+            lbHeader.Text = "aaa";
+            lbHeader.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // button1
             // 
+            button1.Anchor = AnchorStyles.None;
             button1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(196, -4);
+            button1.Location = new Point(196, 0);
+            button1.Margin = new Padding(0);
             button1.Name = "button1";
             button1.Size = new Size(200, 80);
             button1.TabIndex = 3;
+            button1.Tag = "Student";
             button1.Text = "Student Information";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click_1;
+            button1.MouseEnter += button1_MouseEnter;
+            button1.MouseLeave += button1_MouseLeave;
+            button1.MouseHover += button1_MouseHover;
             // 
             // button2
             // 
+            button2.Anchor = AnchorStyles.None;
             button2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.Location = new Point(402, -4);
+            button2.Location = new Point(396, -4);
+            button2.Margin = new Padding(0);
             button2.Name = "button2";
             button2.Size = new Size(200, 80);
             button2.TabIndex = 4;
+            button2.Tag = "Class";
             button2.Text = "Class Information";
             button2.UseVisualStyleBackColor = true;
+            button2.MouseEnter += button2_MouseEnter;
+            button2.MouseLeave += button2_MouseLeave;
             // 
             // button3
             // 
+            button3.Anchor = AnchorStyles.None;
             button3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button3.Location = new Point(608, -4);
+            button3.Location = new Point(596, -4);
+            button3.Margin = new Padding(0);
             button3.Name = "button3";
             button3.Size = new Size(200, 80);
             button3.TabIndex = 5;
+            button3.Tag = "Application";
             button3.Text = "Application Information";
             button3.UseVisualStyleBackColor = true;
+            button3.MouseEnter += button3_MouseEnter;
+            button3.MouseLeave += button3_MouseLeave;
             // 
             // button4
             // 
+            button4.Anchor = AnchorStyles.None;
             button4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button4.Location = new Point(814, -4);
+            button4.Location = new Point(796, -4);
+            button4.Margin = new Padding(0);
             button4.Name = "button4";
             button4.Size = new Size(200, 80);
             button4.TabIndex = 6;
-            button4.Text = "Log Out";
+            button4.Tag = "Logout";
+            button4.Text = "Logout";
             button4.UseVisualStyleBackColor = true;
+            button4.MouseEnter += button4_MouseEnter;
+            button4.MouseLeave += button4_MouseLeave;
             // 
             // Form1
             // 
@@ -119,7 +141,6 @@
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)pbBackground).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
