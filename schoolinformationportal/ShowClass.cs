@@ -19,7 +19,9 @@ namespace schoolinformationportal
         List<Student> _studentList = new List<Student>();
 
         BindingList<Student> filteredStudents = new BindingList<Student>();
-        public ShowClass()
+
+        string getId;
+        public ShowClass(string getClassID)
         {
             InitializeComponent();
             //_studentList = _studentInfoContext.Classes.Where(Class => Class.ClassId.Contains()).ToString();
@@ -33,11 +35,13 @@ namespace schoolinformationportal
             var allStudents = studentRepository.GetAll();
             foreach (var student in allStudents)
             {
-                if (student.ClassId == "SE0002")
+                if (student.ClassId == getClassID)
                 {
                     filteredStudents.Add(student);
                 }
             }
+
+            getId = getClassID;
 
             // Set the filtered students as the data source for the DataGridView
             dgvClass.DataSource = filteredStudents;
@@ -62,7 +66,7 @@ namespace schoolinformationportal
         {
             _studentInfoContext = new StudentInfoContext();
             var searchValue = txtSearchID.Text;
-            var list = _studentInfoContext.Students.Where(student => student.StudentId.Equals(searchValue) && student.ClassId == "SE0002").ToList();
+            var list = _studentInfoContext.Students.Where(student => student.StudentId.Equals(searchValue) && student.ClassId == getId).ToList();
 
             if(list.Count > 0)
             {
@@ -72,7 +76,7 @@ namespace schoolinformationportal
             {
                 MessageBox.Show("Student Not Found!","Notification",MessageBoxButtons.OK);
 
-                var filteredStudents = studentRepository.GetAll() .Where(student => student.ClassId == "SE0002").ToList();
+                var filteredStudents = studentRepository.GetAll() .Where(student => student.ClassId == getId).ToList();
 
                 dgvClass.DataSource = new BindingSource() { DataSource = filteredStudents };
                 //    var listAll = studentRepository.GetAll();
@@ -82,7 +86,7 @@ namespace schoolinformationportal
 
         private void viewSubj_Click(object sender, EventArgs e)
         {
-            Form frSubject = new ShowSubject();
+            Form frSubject = new ShowSubject(getId);
             frSubject.ShowDialog();
         }
     }

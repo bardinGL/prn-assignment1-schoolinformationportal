@@ -29,118 +29,110 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            pbBackground = new PictureBox();
-            lbHeader = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            ((System.ComponentModel.ISupportInitialize)pbBackground).BeginInit();
-            SuspendLayout();
+            this.pbBackground = new System.Windows.Forms.PictureBox();
+            this.lbHeader = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBackground)).BeginInit();
+            this.SuspendLayout();
             // 
             // pbBackground
             // 
-            pbBackground.BackgroundImage = (Image)resources.GetObject("pbBackground.BackgroundImage");
-            pbBackground.Location = new Point(-8, -4);
-            pbBackground.Name = "pbBackground";
-            pbBackground.Size = new Size(1200, 500);
-            pbBackground.TabIndex = 1;
-            pbBackground.TabStop = false;
-            pbBackground.Click += pictureBox1_Click;
+            this.pbBackground.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbBackground.BackgroundImage")));
+            this.pbBackground.Location = new System.Drawing.Point(-8, -4);
+            this.pbBackground.Name = "pbBackground";
+            this.pbBackground.Size = new System.Drawing.Size(1200, 500);
+            this.pbBackground.TabIndex = 1;
+            this.pbBackground.TabStop = false;
             // 
             // lbHeader
             // 
-            lbHeader.BackColor = Color.Transparent;
-            lbHeader.Dock = DockStyle.Fill;
-            lbHeader.Font = new Font("Segoe UI Black", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            lbHeader.ForeColor = Color.SkyBlue;
-            lbHeader.Location = new Point(0, 0);
-            lbHeader.Name = "lbHeader";
-            lbHeader.Size = new Size(1184, 455);
-            lbHeader.TabIndex = 2;
-            lbHeader.Text = "aaa";
-            lbHeader.TextAlign = ContentAlignment.MiddleCenter;
+            this.lbHeader.BackColor = System.Drawing.Color.Transparent;
+            this.lbHeader.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbHeader.Font = new System.Drawing.Font("Segoe UI Black", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbHeader.ForeColor = System.Drawing.Color.SkyBlue;
+            this.lbHeader.Location = new System.Drawing.Point(0, 0);
+            this.lbHeader.Name = "lbHeader";
+            this.lbHeader.Size = new System.Drawing.Size(1184, 455);
+            this.lbHeader.TabIndex = 2;
+            this.lbHeader.Text = "aaa";
+            this.lbHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button1
             // 
-            button1.Anchor = AnchorStyles.None;
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(196, 0);
-            button1.Margin = new Padding(0);
-            button1.Name = "button1";
-            button1.Size = new Size(200, 80);
-            button1.TabIndex = 3;
-            button1.Tag = "Student";
-            button1.Text = "Student Information";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click_1;
-            button1.MouseEnter += button1_MouseEnter;
-            button1.MouseLeave += button1_MouseLeave;
-            button1.MouseHover += button1_MouseHover;
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(196, 0);
+            this.button1.Margin = new System.Windows.Forms.Padding(0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(200, 80);
+            this.button1.TabIndex = 3;
+            this.button1.Tag = "Student";
+            this.button1.Text = "Student Information";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            button2.Anchor = AnchorStyles.None;
-            button2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.Location = new Point(396, -4);
-            button2.Margin = new Padding(0);
-            button2.Name = "button2";
-            button2.Size = new Size(200, 80);
-            button2.TabIndex = 4;
-            button2.Tag = "Class";
-            button2.Text = "Class Information";
-            button2.UseVisualStyleBackColor = true;
-            button2.MouseEnter += button2_MouseEnter;
-            button2.MouseLeave += button2_MouseLeave;
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button2.Location = new System.Drawing.Point(396, -4);
+            this.button2.Margin = new System.Windows.Forms.Padding(0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(200, 80);
+            this.button2.TabIndex = 4;
+            this.button2.Tag = "Class";
+            this.button2.Text = "Class Information";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            button3.Anchor = AnchorStyles.None;
-            button3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button3.Location = new Point(596, -4);
-            button3.Margin = new Padding(0);
-            button3.Name = "button3";
-            button3.Size = new Size(200, 80);
-            button3.TabIndex = 5;
-            button3.Tag = "Application";
-            button3.Text = "Application Information";
-            button3.UseVisualStyleBackColor = true;
-            button3.MouseEnter += button3_MouseEnter;
-            button3.MouseLeave += button3_MouseLeave;
+            this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button3.Location = new System.Drawing.Point(596, -4);
+            this.button3.Margin = new System.Windows.Forms.Padding(0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(200, 80);
+            this.button3.TabIndex = 5;
+            this.button3.Tag = "Application";
+            this.button3.Text = "Application Information";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
-            button4.Anchor = AnchorStyles.None;
-            button4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button4.Location = new Point(796, -4);
-            button4.Margin = new Padding(0);
-            button4.Name = "button4";
-            button4.Size = new Size(200, 80);
-            button4.TabIndex = 6;
-            button4.Tag = "Logout";
-            button4.Text = "Logout";
-            button4.UseVisualStyleBackColor = true;
-            button4.MouseEnter += button4_MouseEnter;
-            button4.MouseLeave += button4_MouseLeave;
+            this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button4.Location = new System.Drawing.Point(796, -4);
+            this.button4.Margin = new System.Windows.Forms.Padding(0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(200, 80);
+            this.button4.TabIndex = 6;
+            this.button4.Tag = "Logout";
+            this.button4.Text = "Logout";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            ClientSize = new Size(1184, 455);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(lbHeader);
-            Controls.Add(pbBackground);
-            MaximizeBox = false;
-            MinimizeBox = false;
-            Name = "Form1";
-            Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)pbBackground).EndInit();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(1184, 455);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.lbHeader);
+            this.Controls.Add(this.pbBackground);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "Form1";
+            this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.pbBackground)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion

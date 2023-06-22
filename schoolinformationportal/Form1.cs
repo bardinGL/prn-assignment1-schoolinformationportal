@@ -119,5 +119,11 @@ namespace schoolinformationportal
             button4.Location = new Point(button4.Location.X, button4.Location.Y - 10);
             button4.Size = new Size(200, 80);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form frClass = new ShowClass(getparam);
+            frClass.ShowDialog();
+        }
     }
 }
