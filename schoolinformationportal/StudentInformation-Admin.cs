@@ -19,11 +19,19 @@ namespace schoolinformationportal
         List<Student> _studentList = new List<Student>();
         StudentInfoContext _studentInfoContext = new StudentInfoContext();
 
+        ClassRepository classRepository = new ClassRepository();
+
+        AccountRepository accountRepository = new AccountRepository();
+
+
         public StudentInformation_Admin()
         {
             InitializeComponent();
+            _studentList = new List<Student>();
             _studentList = studentRepository.GetAll();
             dgvStudentAdmin.DataSource = new BindingSource() { DataSource = _studentList};
+
+            txtStudentID.ReadOnly = true;
 
             // Hide the 'Class' column
             dgvStudentAdmin.Columns["Class"].Visible = false;
@@ -39,15 +47,55 @@ namespace schoolinformationportal
 
         }
 
+
+        private void ReloadList()
+        {
+            classRepository = new ClassRepository();
+            studentRepository = new StudentRepository();
+            _studentList = studentRepository.GetAll()
+            .Select(p =>
+             {
+                 p.Class= classRepository.GetAll().FirstOrDefault(t => t.ClassId == p.ClassId);
+                 return p;
+             })
+            .ToList();
+
+
+            dgvStudentAdmin.DataSource = new BindingSource() { DataSource = _studentList };
+
+            txtStudentID.ReadOnly = true;
+
+            // Hide the 'Class' column
+            dgvStudentAdmin.Columns["Class"].Visible = false;
+
+            // Hide the 'Major' column
+            dgvStudentAdmin.Columns["Major"].Visible = false;
+
+            // Hide the 'StudentEmailNavigation' column
+            dgvStudentAdmin.Columns["StudentEmailNavigation"].Visible = false;
+
+            // Hide the 'Applications' column
+            dgvStudentAdmin.Columns["Applications"].Visible = false;
+        }
+
+
         private void dgvStudentAdmin_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var student = _studentList[e.RowIndex];
-            txtStudentID.Text = student.StudentId.ToString();
-            txtStudentName.Text = student.StudentName.ToString();
-            nudAge.Value = student.StudentAge;
-            txtEmail.Text = student.StudentEmail.ToString();
-            txtMajorID.Text = student.MajorId.ToString();
-            txtClassID.Text = student.ClassId.ToString();
+            DataGridView dgv = (DataGridView)sender;
+            if (e.RowIndex == dgv.Rows.Count - 1 || e.RowIndex == -1)
+            {
+                ReloadList();
+            }
+            else
+            {
+                var student = _studentList[e.RowIndex];
+                txtStudentID.Text = student.StudentId.ToString();
+                txtStudentName.Text = student.StudentName.ToString();
+                nudAge.Value = student.StudentAge;
+                txtEmail.Text = student.StudentEmail.ToString();
+                txtMajorID.Text = student.MajorId.ToString();
+                txtClassID.Text = student.ClassId.ToString();
+            }
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -93,31 +141,46 @@ namespace schoolinformationportal
             {
 
                 Validation validation = new Validation();
+
+                
+
                 string studentName = txtStudentName.Text;
                 string studenId = validation.createStudentID("SE", studentName);
                 //string studenId = "SE69";
 
                 int studentAge = (int) nudAge.Value;
-                string email = txtEmail.Text;
+                //string email = txtEmail.Text;
                 string majorId = txtMajorID.Text;
                 string classId = txtClassID.Text;
 
-                Student student = new Student
-                {
-                    StudentId = studenId,
-                    StudentName = studentName,
-                    StudentAge = studentAge,
-                    StudentEmail = email,
-                    MajorId = majorId,
-                    ClassId = classId,
-                };
+                //Student student = new Student
+                //{
+                //    StudentId = studenId,
+                //    StudentName = studentName,
+                //    StudentAge = studentAge,
+                //    StudentEmail = email,
+                //    MajorId = majorId,
+                //    ClassId = classId,
+                //};
 
-                //student.StudentId = studenId;
-                //student.StudentName = studentName;
-                //student.StudentAge = studentAge;
-                //student.StudentEmail = email;
-                //student.MajorId = majorId;
-                //student.ClassId = classId;
+                string password = validation.createPassword(studentName);
+                string email = validation.createEmail(studenId);
+
+                Account account = new Account();
+
+                account.Email = email;
+                account.Password = password;
+
+                
+
+                Student student = new Student();
+
+                student.StudentId = studenId;
+                student.StudentName = studentName;
+                student.StudentAge = studentAge;
+                student.StudentEmail = email;
+                student.MajorId = majorId;
+                student.ClassId = classId;
 
                 //foreach (Student stu in _studentList)
                 //{
@@ -126,10 +189,13 @@ namespace schoolinformationportal
 
                 //    }
                 //}
-                StudentRepository _studentRepository = new StudentRepository();
-                _studentRepository.Create(student);
-                dgvStudentAdmin.DataSource = new BindingSource() { DataSource = _studentRepository.GetAll() };
 
+                StudentRepository _studentRepository = new StudentRepository();
+                accountRepository.Create(account);
+                _studentRepository.Create(student);
+
+                dgvStudentAdmin.DataSource = new BindingSource() { DataSource = _studentRepository.GetAll() };
+                ReloadList();
                 txtStudentID.Text = "";
                 txtStudentName.Text = "";
                 nudAge.Value = 18;
@@ -139,7 +205,7 @@ namespace schoolinformationportal
             }
             catch (Exception ex)
             {
-                string message = ex.Message;
+                string message = ex.InnerException.Message;
                 MessageBox.Show(message, "Notification", MessageBoxButtons.OK);
                 Console.WriteLine(message);
             }
@@ -153,6 +219,7 @@ namespace schoolinformationportal
                 studentRepository.Delete(_studentList.FirstOrDefault(x => x.StudentId.Equals(deletedId)));
                 _studentList = studentRepository.GetAll();
                 dgvStudentAdmin.DataSource = new BindingSource() { DataSource = _studentList };
+                //ReloadList();
 
                 txtStudentID.Text = "";
                 txtStudentName.Text = "";
