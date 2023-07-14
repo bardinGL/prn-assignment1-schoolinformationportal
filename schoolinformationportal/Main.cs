@@ -1,15 +1,17 @@
+using PE_PRN;
+
 namespace schoolinformationportal
 {
-    public partial class Form1 : Form
+    public partial class Main : Form
     {
         String getparam;
         String getparamforRoleID;
-        public Form1(String roleID, String fullname, String ClassID)
+        public Main(String roleID, String fullname, String ClassID)
         {
             InitializeComponent();
-             getparam = ClassID;
-             getparamforRoleID = roleID;
-           
+            getparam = ClassID;
+            getparamforRoleID = roleID;
+
             lbHeader.Text = "Welcome " + fullname + " to Student Information Portal";
             var pos = lbHeader.Parent.PointToScreen(lbHeader.Location);
             pos = pbBackground.PointToClient(pos);
@@ -25,7 +27,7 @@ namespace schoolinformationportal
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e) 
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
@@ -40,7 +42,7 @@ namespace schoolinformationportal
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-          
+
             Form studentinformation = new StudentInformation(getparam, getparamforRoleID);
             this.Hide();
 
@@ -124,6 +126,30 @@ namespace schoolinformationportal
         {
             Form frClass = new ShowClass(getparam);
             frClass.ShowDialog();
+        }
+
+        private void lbHeader_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This Fetures is not finished, please come back later", "Notification",
+                MessageBoxButtons.OK);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DialogResult answer = MessageBox.Show("You sure you want to log out", "Log Out",
+                                        MessageBoxButtons.YesNo,
+                                        MessageBoxIcon.Question);
+            if (answer == DialogResult.Yes)
+            {
+                this.Hide();
+                Form login = new Login();
+                login.ShowDialog();
+            }
         }
     }
 }

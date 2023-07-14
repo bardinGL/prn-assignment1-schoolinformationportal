@@ -18,6 +18,7 @@ namespace PE_PRN
     public partial class Login : Form
     {
         AccountRepository repositoryBase = new AccountRepository();
+        AdminRepository adminRepository = new AdminRepository();
         //UserServices userService = new UserServices();
         public Login()
         {
@@ -27,17 +28,36 @@ namespace PE_PRN
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
-        {   if (radioButton1.Checked)
+        {
+            if (radioButton1.Checked)
             {
+                btnLogin.Enabled = false;
+                String username = txtUsername.Text;
+                String password = txtPassword.Text;
+
+                var check = adminRepository.GetAll().Where(c =>
+                c.AdminId.Equals(username) &&
+                c.Email.Equals(password));
 
 
+                if (check != null)
+                {
+                    this.Hide();
+                    Main form1 = new Main("Admin", null, null);
+                    form1.Show();
 
-
-
-
+                }
+                else
+                {
+                    MessageBox.Show("You are not allowed to access this function!",
+                        "Notification",
+                        MessageBoxButtons.OK);
+                }
+                btnLogin.Enabled = true;
 
             }
-            else {
+            else
+            {
 
                 btnLogin.Enabled = false;
                 String username = txtUsername.Text;
@@ -75,7 +95,7 @@ namespace PE_PRN
                                    where c.StudentEmail == username
                                    select c.ClassId).SingleOrDefault();
                     this.Hide();
-                    Form1 form1 = new Form1(roleID, fullname, ClassID);
+                    Main form1 = new Main(roleID, fullname, ClassID);
                     form1.Show();
                     //Management management = new Management();
                     //management.Show();
@@ -92,9 +112,9 @@ namespace PE_PRN
 
 
             }
-          
 
-        
+
+
         }
 
 
