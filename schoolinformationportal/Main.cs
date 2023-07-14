@@ -34,10 +34,21 @@ namespace schoolinformationportal
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form studentinformation = new StudentInformation(getparam, getparamforRoleID);
-            this.Hide();
+            if (!getparamforRoleID.Equals("Admin"))
+            {
+                Form studentinformation = new StudentInformation(getparam, getparamforRoleID);
+                this.Hide();
 
-            studentinformation.ShowDialog();
+                studentinformation.ShowDialog();
+            }
+            else
+            {
+                Form studentinformation2 = new StudentInformation_Admin();
+                this.Hide();
+
+                studentinformation2.ShowDialog();
+            }
+            
         }
 
         private void button1_Click_1(object sender, EventArgs e)
