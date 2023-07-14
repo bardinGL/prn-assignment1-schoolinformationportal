@@ -30,23 +30,38 @@ namespace schoolinformationportal
 
         }
 
-//        private void btnSearch_Click(object sender, EventArgs e)
-//        {
-//            String searchValue = txtSearchID.Text.Trim().ToLower();
-//
-//            if (String.IsNullOrEmpty(searchValue))
-//           {
-//                dgvApplication.DataSource = applicationRepository.GetAll();
-//            }
-//            else
-//            {
-//                List<AppModel> applications;
-//                applications = applicationRepository.GetAll().Where(b => b.StudentId.ToLower().Contains(searchValue)).ToList();
-//                dgvApplication.DataSource = applications;
-//            }
-//        }
-
         private void dgvApplication_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            String searchValue = txtSearchValue.Text.Trim().ToLower();
+
+            if (String.IsNullOrEmpty(searchValue))
+            {
+                dgvApplication.DataSource = applicationRepository.GetAll();
+            }
+            else
+            {
+                List<AppModel> applications;
+                applications = applicationRepository.GetAll().Where(b => b.StudentId.ToLower().Contains(searchValue)).ToList();
+                dgvApplication.DataSource = applications;
+            }
+        }
+
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
 
         }
