@@ -39,6 +39,7 @@
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
+            button5 = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvApplication).BeginInit();
             SuspendLayout();
             // 
@@ -57,20 +58,20 @@
             label1.AutoSize = true;
             label1.Location = new Point(21, 26);
             label1.Name = "label1";
-            label1.Size = new Size(198, 20);
+            label1.Size = new Size(233, 20);
             label1.TabIndex = 1;
-            label1.Text = "Search Application By Name";
+            label1.Text = "Search Application By Students'ID";
             // 
             // txtSearchValue
             // 
-            txtSearchValue.Location = new Point(235, 23);
+            txtSearchValue.Location = new Point(260, 23);
             txtSearchValue.Name = "txtSearchValue";
             txtSearchValue.Size = new Size(372, 27);
             txtSearchValue.TabIndex = 2;
             // 
             // button1
             // 
-            button1.Location = new Point(632, 21);
+            button1.Location = new Point(668, 22);
             button1.Name = "button1";
             button1.Size = new Size(94, 29);
             button1.TabIndex = 3;
@@ -140,11 +141,22 @@
             button4.UseVisualStyleBackColor = true;
             button4.Click += btnUpdate_Click;
             // 
+            // button5
+            // 
+            button5.Location = new Point(793, 10);
+            button5.Name = "button5";
+            button5.Size = new Size(195, 49);
+            button5.TabIndex = 11;
+            button5.Text = "Back To Home Page";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += btnHome_Click;
+            // 
             // Applicant
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1182, 481);
+            Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -176,5 +188,6 @@
         private Button button2;
         private Button button3;
         private Button button4;
+        private Button button5;
     }
 }

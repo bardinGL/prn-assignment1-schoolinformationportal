@@ -108,16 +108,7 @@ namespace PE_PRN
                         MessageBoxButtons.OK);
                 }
                 btnLogin.Enabled = true;
-
-
-
             }
-
-
-
         }
-
-
-
     }
 }
