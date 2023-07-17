@@ -37,14 +37,14 @@ namespace schoolinformationportal
             if (!getparamforRoleID.Equals("Admin"))
             {
                 Form studentinformation = new StudentInformation(getparam, getparamforRoleID);
-                this.Hide();
+                //this.Hide();
 
                 studentinformation.ShowDialog();
             }
             else
             {
                 Form studentinformation2 = new StudentInformation_Admin();
-                this.Hide();
+                //this.Hide();
 
                 studentinformation2.ShowDialog();
             }
