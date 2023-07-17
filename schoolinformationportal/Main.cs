@@ -37,18 +37,21 @@ namespace schoolinformationportal
             if (!getparamforRoleID.Equals("Admin"))
             {
                 Form studentinformation = new StudentInformation(getparam, getparamforRoleID);
+
                 //this.Hide();
+
 
                 studentinformation.ShowDialog();
             }
             else
             {
                 Form studentinformation2 = new StudentInformation_Admin();
+
                 //this.Hide();
 
                 studentinformation2.ShowDialog();
             }
-            
+
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -152,9 +155,17 @@ namespace schoolinformationportal
 
         private void button4_Click(object sender, EventArgs e)
         {
+
+                this.Hide();
+                Form Application = new Applicant();
+                Application.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
             DialogResult answer = MessageBox.Show("You sure you want to log out", "Log Out",
-                                        MessageBoxButtons.YesNo,
-                                        MessageBoxIcon.Question);
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Question);
             if (answer == DialogResult.Yes)
             {
                 this.Hide();

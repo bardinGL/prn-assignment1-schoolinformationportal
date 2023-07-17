@@ -93,26 +93,27 @@
             // 
             button3.Anchor = AnchorStyles.None;
             button3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button3.Location = new Point(596, -4);
+            button3.Location = new Point(795, -4);
             button3.Margin = new Padding(0);
             button3.Name = "button3";
             button3.Size = new Size(200, 80);
             button3.TabIndex = 5;
             button3.Tag = "Application";
-            button3.Text = "Application Information";
+            button3.Text = "LogOut";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button4
             // 
             button4.Anchor = AnchorStyles.None;
             button4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button4.Location = new Point(796, -4);
+            button4.Location = new Point(596, 0);
             button4.Margin = new Padding(0);
             button4.Name = "button4";
             button4.Size = new Size(200, 80);
             button4.TabIndex = 6;
             button4.Tag = "Logout";
-            button4.Text = "Logout";
+            button4.Text = "Application Information";
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 

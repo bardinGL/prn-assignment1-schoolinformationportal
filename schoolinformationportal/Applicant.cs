@@ -11,6 +11,7 @@ using AppModel = Service.Models.Application;
 using WindowsApp = System.Windows.Forms.Application;
 using Service.Repository;
 using Service.Models;
+using PE_PRN;
 
 namespace schoolinformationportal
 {
@@ -64,6 +65,13 @@ namespace schoolinformationportal
         private void btnUpdate_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form Main = new Main(null, null, null);
+            Main.ShowDialog();
         }
     }
 }
