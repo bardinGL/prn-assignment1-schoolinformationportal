@@ -42,6 +42,18 @@ namespace schoolinformationportal
                 }
             }
 
+            // Hide the 'Class' column
+            dataGridView1.Columns["Class"].Visible = false;
+
+            // Hide the 'Major' column
+            dataGridView1.Columns["Major"].Visible = false;
+
+            // Hide the 'StudentEmailNavigation' column
+            dataGridView1.Columns["StudentEmailNavigation"].Visible = false;
+
+            // Hide the 'Applications' column
+            dataGridView1.Columns["Applications"].Visible = false;
+
 
             //var studentName = _context.Students.Where(s => s.ClassId == getRoleIDtocheck).Select(s => s.StudentName).FirstOrDefault();
             //var studentAge = _context.Students.Where(s => s.ClassId == getRoleIDtocheck).Select(s => s.StudentAge).FirstOrDefault();

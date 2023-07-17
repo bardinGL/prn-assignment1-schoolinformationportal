@@ -50,7 +50,7 @@ namespace schoolinformationportal
 
         private void ReloadList()
         {
-            classRepository = new ClassRepository();
+            //classRepository = new ClassRepository();
             studentRepository = new StudentRepository();
 
             //_studentList = studentRepository.GetAll()
