@@ -50,17 +50,25 @@ namespace schoolinformationportal
 
         private void ReloadList()
         {
-            classRepository = new ClassRepository();
+            //classRepository = new ClassRepository();
             studentRepository = new StudentRepository();
-            _studentList = studentRepository.GetAll()
-            .Select(p =>
-             {
-                 p.Class= classRepository.GetAll().FirstOrDefault(t => t.ClassId == p.ClassId);
-                 return p;
-             })
-            .ToList();
 
+            //_studentList = studentRepository.GetAll()
+            //.Select(p =>
+            // {
+            //     p.Class = classRepository.GetAll().FirstOrDefault(t => t.ClassId == p.ClassId);
+            //     return p;
+            // })
+            //.ToList();
 
+            //var list = studentRepository.GetAll();
+            //var selectedList = list.Select(p => new { p.StudentId, p.StudentName, p.StudentAge, p.StudentEmail, p.MajorId, p.ClassId }).ToList();
+
+            //dgvStudentAdmin.DataSource = new BindingSource() { DataSource = selectedList };
+
+            //txtStudentID.ReadOnly = true;
+
+            _studentList = studentRepository.GetAll();
             dgvStudentAdmin.DataSource = new BindingSource() { DataSource = _studentList };
 
             txtStudentID.ReadOnly = true;
@@ -82,20 +90,41 @@ namespace schoolinformationportal
         private void dgvStudentAdmin_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dgv = (DataGridView)sender;
-            if (e.RowIndex == dgv.Rows.Count - 1 || e.RowIndex == -1)
+            //if (e.RowIndex == dgv.Rows.Count - 1 || e.RowIndex == -1)
+            //{
+            //    ReloadList();
+            //}
+            if (e.RowIndex >= 0 && e.RowIndex < dgv.Rows.Count)
             {
-                ReloadList();
+                if (e.RowIndex == dgv.Rows.Count - 1 && dgv.Rows[e.RowIndex].IsNewRow)
+                {
+                    ReloadList();
+                }
+                else
+                {
+                    var student = _studentList[e.RowIndex];
+                    txtStudentID.Text = student.StudentId.ToString();
+                    txtStudentName.Text = student.StudentName.ToString();
+                    nudAge.Value = student.StudentAge;
+                    txtEmail.Text = student.StudentEmail.ToString();
+                    txtMajorID.Text = student.MajorId.ToString();
+                    txtClassID.Text = student.ClassId.ToString();
+                }
             }
-            else
-            {
-                var student = _studentList[e.RowIndex];
-                txtStudentID.Text = student.StudentId.ToString();
-                txtStudentName.Text = student.StudentName.ToString();
-                nudAge.Value = student.StudentAge;
-                txtEmail.Text = student.StudentEmail.ToString();
-                txtMajorID.Text = student.MajorId.ToString();
-                txtClassID.Text = student.ClassId.ToString();
-            }
+
+
+
+            //else
+            //{
+            //    var student = _studentList[e.RowIndex];
+            //    txtStudentID.Text = student.StudentId.ToString();
+            //    txtStudentName.Text = student.StudentName.ToString();
+            //    nudAge.Value = student.StudentAge;
+            //    txtEmail.Text = student.StudentEmail.ToString();
+            //    txtMajorID.Text = student.MajorId.ToString();
+            //    txtClassID.Text = student.ClassId.ToString();
+            //}
+
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -215,11 +244,17 @@ namespace schoolinformationportal
         {
             if (MessageBox.Show("Do you want to remove this student?", "Remove Student", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                //Delete Cach 1
                 string deletedId = txtStudentID.Text;
                 studentRepository.Delete(_studentList.FirstOrDefault(x => x.StudentId.Equals(deletedId)));
                 _studentList = studentRepository.GetAll();
                 dgvStudentAdmin.DataSource = new BindingSource() { DataSource = _studentList };
-                //ReloadList();
+
+                //Delete Cach 2
+                var student = studentRepository.GetAll().ToList()[dgvStudentAdmin.CurrentRow.Index];
+                studentRepository.Delete(student);
+
+                ReloadList();
 
                 txtStudentID.Text = "";
                 txtStudentName.Text = "";
