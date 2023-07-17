@@ -152,9 +152,9 @@ namespace schoolinformationportal
         private void button4_Click(object sender, EventArgs e)
         {
 
-                this.Hide();
-                Form Application = new Applicant();
-                Application.ShowDialog();
+            this.Hide();
+            Form Application = new Applicant();
+            Application.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -168,6 +168,13 @@ namespace schoolinformationportal
                 Form login = new Login();
                 login.ShowDialog();
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form FPT = new About_FPT();
+            FPT.ShowDialog();
         }
     }
 }
