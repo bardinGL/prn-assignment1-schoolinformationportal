@@ -54,26 +54,24 @@ namespace schoolinformationportal
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            String StudentID = txtStudentID.Text.Trim();
-            String Reason = txtReason.Text.Trim();  
+            //String StudentID = txtStudentID.Text.Trim();
+            //String Reason = txtReason.Text.Trim();  
+            MessageBox.Show("This Fetures is not working properlly so we disable it, please come back later", "Notification",
+                MessageBoxButtons.OK);
 
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("This Fetures is not working properlly so we disable it, please come back later", "Notification",
+                MessageBoxButtons.OK);
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("This Fetures is not working properlly so we disable it, please come back later", "Notification",
+                MessageBoxButtons.OK);
         }
 
-        private void btnHome_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form Main = new Main(null, null, null);
-            Main.ShowDialog();
-        }
     }
 }
