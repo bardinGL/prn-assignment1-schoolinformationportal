@@ -44,19 +44,25 @@
             textBox8 = new TextBox();
             textBox9 = new TextBox();
             textBox10 = new TextBox();
+            textBox11 = new TextBox();
+            textBox12 = new TextBox();
+            textBox13 = new TextBox();
+            textBox14 = new TextBox();
+            linkLabel2 = new LinkLabel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(803, 452);
+            linkLabel1.Location = new Point(764, 452);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(265, 20);
+            linkLabel1.Size = new Size(157, 20);
             linkLabel1.TabIndex = 0;
             linkLabel1.TabStop = true;
-            linkLabel1.Text = "Thông tin thêm về Trường Đại Học FPT";
+            linkLabel1.Text = "Website FPT University\r\n";
             linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            linkLabel1.Click += label1_Click;
             // 
             // label1
             // 
@@ -112,6 +118,7 @@
             textBox2.Size = new Size(630, 218);
             textBox2.TabIndex = 5;
             textBox2.Text = resources.GetString("textBox2.Text");
+            textBox2.TextChanged += textBox2_TextChanged;
             // 
             // textBox3
             // 
@@ -202,11 +209,65 @@
             textBox10.TabIndex = 14;
             textBox10.Text = "* Học bổng và chế độ đãi ngộ tốt\r\n\r\n\r\n\r\n";
             // 
+            // textBox11
+            // 
+            textBox11.Location = new Point(3, 425);
+            textBox11.Multiline = true;
+            textBox11.Name = "textBox11";
+            textBox11.ReadOnly = true;
+            textBox11.Size = new Size(125, 26);
+            textBox11.TabIndex = 15;
+            textBox11.Text = "Contact Us";
+            // 
+            // textBox12
+            // 
+            textBox12.Location = new Point(375, 432);
+            textBox12.Multiline = true;
+            textBox12.Name = "textBox12";
+            textBox12.ReadOnly = true;
+            textBox12.Size = new Size(364, 52);
+            textBox12.TabIndex = 16;
+            textBox12.Text = "Address: Lô E2a-7, Đường D1, Khu Công nghệ cao, P.Long Thạnh Mỹ, Tp. Thủ Đức, TP.HCM ";
+            // 
+            // textBox13
+            // 
+            textBox13.Location = new Point(134, 424);
+            textBox13.Multiline = true;
+            textBox13.Name = "textBox13";
+            textBox13.ReadOnly = true;
+            textBox13.Size = new Size(182, 27);
+            textBox13.TabIndex = 17;
+            textBox13.Text = "Phone: (028) 7300 5588\r\n";
+            // 
+            // textBox14
+            // 
+            textBox14.Location = new Point(134, 457);
+            textBox14.Multiline = true;
+            textBox14.Name = "textBox14";
+            textBox14.ReadOnly = true;
+            textBox14.Size = new Size(235, 27);
+            textBox14.TabIndex = 18;
+            textBox14.Text = "Email : daihoc.hcm@fpt.edu.vn";
+            // 
+            // linkLabel2
+            // 
+            linkLabel2.AutoSize = true;
+            linkLabel2.Location = new Point(402, 455);
+            linkLabel2.Name = "linkLabel2";
+            linkLabel2.Size = new Size(0, 20);
+            linkLabel2.TabIndex = 19;
+            // 
             // About_FPT
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1182, 481);
+            Controls.Add(linkLabel2);
+            Controls.Add(textBox14);
+            Controls.Add(textBox13);
+            Controls.Add(textBox12);
+            Controls.Add(textBox11);
             Controls.Add(textBox10);
             Controls.Add(textBox9);
             Controls.Add(textBox8);
@@ -245,5 +306,10 @@
         private TextBox textBox8;
         private TextBox textBox9;
         private TextBox textBox10;
+        private TextBox textBox11;
+        private TextBox textBox12;
+        private TextBox textBox13;
+        private TextBox textBox14;
+        private LinkLabel linkLabel2;
     }
 }

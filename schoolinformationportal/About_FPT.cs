@@ -21,6 +21,19 @@ namespace schoolinformationportal
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+
+        }
+
+        private void VisitLink()
+        {
+            // Change the color of the link text by setting LinkVisitedto true.
+            linkLabel1.LinkVisited = true;
+            //Call the Process.Start method to open the default browser with a URL:
+            System.Diagnostics.Process.Start("https://hcmuni.fpt.edu.vn/gioi-thieu/truong-dai-hoc-fpt");
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
             try
             {
                 VisitLink();
@@ -31,27 +44,17 @@ namespace schoolinformationportal
             }
         }
 
-        private void VisitLink()
-        {
-            // Change the color of the link text by setting LinkVisited
-            // to true.
-            linkLabel1.LinkVisited = true;
-            //Call the Process.Start method to open the default browser
-            //with a URL:
-            System.Diagnostics.Process.Start("https://hcmuni.fpt.edu.vn/gioi-thieu/truong-dai-hoc-fpt");
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }

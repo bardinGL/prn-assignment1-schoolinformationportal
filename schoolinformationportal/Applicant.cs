@@ -54,6 +54,8 @@ namespace schoolinformationportal
 
         private void btnSend_Click(object sender, EventArgs e)
         {
+            String StudentID = txtStudentID.Text.Trim();
+            String Reason = txtReason.Text.Trim();  
 
         }
 
