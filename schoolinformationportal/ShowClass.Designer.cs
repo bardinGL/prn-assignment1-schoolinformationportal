@@ -41,44 +41,45 @@
             // dgvClass
             // 
             this.dgvClass.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClass.Location = new System.Drawing.Point(23, 66);
-            this.dgvClass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvClass.Location = new System.Drawing.Point(26, 88);
             this.dgvClass.Name = "dgvClass";
             this.dgvClass.RowHeadersWidth = 51;
             this.dgvClass.RowTemplate.Height = 29;
-            this.dgvClass.Size = new System.Drawing.Size(841, 248);
+            this.dgvClass.Size = new System.Drawing.Size(961, 331);
             this.dgvClass.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(23, 9);
+            this.label1.Location = new System.Drawing.Point(26, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 39);
+            this.label1.Size = new System.Drawing.Size(138, 52);
             this.label1.TabIndex = 1;
             this.label1.Text = "CLASS";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(386, 29);
+            this.label2.Location = new System.Drawing.Point(441, 39);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 15);
+            this.label2.Size = new System.Drawing.Size(123, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Search StudentID";
             // 
             // txtSearchID
             // 
-            this.txtSearchID.Location = new System.Drawing.Point(503, 26);
+            this.txtSearchID.Location = new System.Drawing.Point(575, 35);
+            this.txtSearchID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSearchID.Name = "txtSearchID";
-            this.txtSearchID.Size = new System.Drawing.Size(155, 23);
+            this.txtSearchID.Size = new System.Drawing.Size(177, 27);
             this.txtSearchID.TabIndex = 3;
             // 
             // btnSearchID
             // 
-            this.btnSearchID.Location = new System.Drawing.Point(682, 26);
+            this.btnSearchID.Location = new System.Drawing.Point(779, 35);
+            this.btnSearchID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearchID.Name = "btnSearchID";
-            this.btnSearchID.Size = new System.Drawing.Size(75, 23);
+            this.btnSearchID.Size = new System.Drawing.Size(86, 31);
             this.btnSearchID.TabIndex = 4;
             this.btnSearchID.Text = "Search";
             this.btnSearchID.UseVisualStyleBackColor = true;
@@ -87,17 +88,18 @@
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(901, 103);
+            this.label3.Location = new System.Drawing.Point(1030, 137);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 61);
+            this.label3.Size = new System.Drawing.Size(104, 81);
             this.label3.TabIndex = 5;
             this.label3.Text = "View Subject";
             // 
             // viewSubj
             // 
-            this.viewSubj.Location = new System.Drawing.Point(901, 189);
+            this.viewSubj.Location = new System.Drawing.Point(1030, 252);
+            this.viewSubj.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.viewSubj.Name = "viewSubj";
-            this.viewSubj.Size = new System.Drawing.Size(75, 23);
+            this.viewSubj.Size = new System.Drawing.Size(86, 31);
             this.viewSubj.TabIndex = 6;
             this.viewSubj.Text = "View";
             this.viewSubj.UseVisualStyleBackColor = true;
@@ -105,10 +107,10 @@
             // 
             // ShowClass
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1034, 361);
+            this.ClientSize = new System.Drawing.Size(1182, 481);
             this.Controls.Add(this.viewSubj);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnSearchID);
@@ -116,7 +118,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvClass);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ShowClass";
